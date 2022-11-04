@@ -1,7 +1,6 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import getMovieById from 'data/getMovieById';
-import getCast from 'data/getCast';
 import getReviews from 'data/getReviews';
 import { BackButton } from 'components/BackButton';
 import { MovieCard } from 'components/MovieCard';
