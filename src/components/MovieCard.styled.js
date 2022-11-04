@@ -20,8 +20,14 @@ export const ContentMovie = styled.div`
   margin-left: 24px;
   padding: 8px;
 `;
-export const TitleMovie = styled.h1`
+export const CaptionMovie = styled.h1`
   margin: 0;
   margin-bottom: 20px;
-  font-size: 48px;
+  font-size: 32px;
 `;
+export const Text = styled.p`
+font-size: 16px;
+`
+export const Title = styled.h2`
+font-size: 24px;
+`

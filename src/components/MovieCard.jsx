@@ -1,8 +1,10 @@
 import {
+  CaptionMovie,
   Container,
   ContentMovie,
   PosterPath,
-  TitleMovie,
+  Text,
+  Title,
 } from './MovieCard.styled';
 
 export const MovieCard = ({ movie }) => {
@@ -13,12 +15,12 @@ export const MovieCard = ({ movie }) => {
         alt={movie.title}
       />
       <ContentMovie>
-        <TitleMovie>{movie.title}</TitleMovie>
-        {/* <span>User score: {movie.vote_average}</span> */}
-        <h2>Overview</h2>
-        <p></p>
-        <h3>Genres</h3>
-        <span></span>
+        <CaptionMovie>{movie.title}</CaptionMovie>
+        <Text>User score: {movie.vote_average}</Text>
+        <Title>Overview</Title>
+              <Text>{ movie.overview}</Text>
+        <Title>Genres</Title>
+              <Text>{ movie.genres.map(el=>el.name).join(' ')}</Text>
       </ContentMovie>
     </Container>
   );
