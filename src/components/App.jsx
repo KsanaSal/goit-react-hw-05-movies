@@ -6,31 +6,21 @@ import { SharedLayout } from './SharedLayout';
 
 // import { MovieDetails } from 'pages/MovieDetails';
 
-const CreateAsyncComponent = path => lazy(() => import('../pages/Home'));
-console.log(CreateAsyncComponent())
+// const CreateAsyncComponent = path => lazy(() => import('../pages/Home'));
+// console.log(CreateAsyncComponent())
 
-// const Home = createAsyncComponent('../pages/Home');
-// const Movies = createAsyncComponent('../pages/Movies');
-// const MovieDetails = createAsyncComponent('../pages/MovieDetails');
+const Home = lazy(() => import('../pages/Home'));
+const Movies = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
 
 export const App = () => {
   return (
-    // <Container>
-    //   <Header>
-    //     <nav>
-    //       <Link to="/" end>
-    //         Home
-    //       </Link>
-    //       <Link to="/movies">Movies</Link>
-    //     </nav>
-    //   </Header>
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<CreateAsyncComponent />} />
-        {/* <Route path="movies" element={<Movies />} /> */}
-        {/* <Route path="movies/:id" element={<MovieDetails />} /> */}
+        <Route index element={<Home />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="movies/:id" element={<MovieDetails />} />
       </Route>
     </Routes>
-    // </Container>
   );
 };
