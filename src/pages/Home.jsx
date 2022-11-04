@@ -1,9 +1,8 @@
 import { MovieList } from 'components/MovieList';
 import getTrending from 'data/getTrending';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export const Home = () => {
+const Home = () => {
   console.log(getTrending());
   getTrending().then(console.log);
   const [movies, setMovies] = useState([]);
@@ -26,3 +25,5 @@ export const Home = () => {
     </main>
   );
 };
+
+export default Home;
