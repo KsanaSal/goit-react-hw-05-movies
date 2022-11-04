@@ -19,6 +19,7 @@ export const Header = styled.header`
   padding: 8px 20px;
   margin-bottom: 16px;
   box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+  background-color: #FDFDFD;
   /* border-bottom: 1px solid black; */
 
   > nav {
@@ -34,6 +35,6 @@ export const Link = styled(NavLink)`
   font-weight: 500;
 
   &.active {
-    color: orangered;
+    color: #FF4500;
   }
 `;

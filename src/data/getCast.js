@@ -1,10 +1,10 @@
 import axios from 'axios';
 import API_KEY from './apiKey';
 
-async function getMovieById(id) {
+async function getCast(id) {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&page=1`
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&page=1`
     );
 
     return response.data;
@@ -13,4 +13,4 @@ async function getMovieById(id) {
   }
 }
 
-export default getMovieById;
+export default getCast
