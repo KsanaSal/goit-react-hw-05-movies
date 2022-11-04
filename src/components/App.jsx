@@ -1,8 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
-// import { Home } from 'pages/Home';
-// import { Movies } from '../pages/Movies';
 import { Container, Header, Link } from './App.styled';
 
 export const App = () => {
