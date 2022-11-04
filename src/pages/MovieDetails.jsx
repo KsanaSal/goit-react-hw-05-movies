@@ -10,13 +10,12 @@ import { Main } from 'components/MovieCard.styled';
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-  const [cast, setCast] = useState(null);
+  
   const [reviews, setReviews] = useState(null);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
   console.log(movie);
-  console.log(cast);
   console.log(reviews);
 
   useEffect(() => {
@@ -25,16 +24,6 @@ const MovieDetails = () => {
         const fetchMovies = await getMovieById(id);
         console.log(fetchMovies);
         setMovie(fetchMovies);
-      } catch {
-        console.log('first');
-      }
-    };
-
-    const movieCast = async () => {
-      try {
-        const fetchMovies = await getCast(id);
-        console.log(fetchMovies);
-        setCast(fetchMovies);
       } catch {
         console.log('first');
       }
@@ -50,7 +39,6 @@ const MovieDetails = () => {
       }
     };
     movieDetail();
-    movieCast();
     movieReviews();
   }, [id]);
   return (
