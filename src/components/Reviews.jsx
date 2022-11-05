@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import getReviews from 'data/getReviews';
+import { TitleReview } from './Reviews.styled';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const Reviews = () => {
       {reviews &&
         reviews.results.map(el => (
           <li>
-            <h1>Author: {el.author}</h1>
+            <TitleReview>Author: {el.author}</TitleReview>
             <p>{el.content}</p>
           </li>
         ))}
