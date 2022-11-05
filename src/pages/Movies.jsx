@@ -10,6 +10,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   console.log(movies);
   useEffect(() => {
+    setMovies([]);
     const searchMovies = async () => {
       try {
         const fetchMovies = await getSearchMovies(query);

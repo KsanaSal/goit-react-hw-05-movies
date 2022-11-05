@@ -45,6 +45,10 @@ export const Link = styled(NavLink)`
   &.active {
     color: #ff4500;
   }
+
+  :hover {
+    text-shadow: 5px 3px 5px rgba(32, 5, 98, 0.4);
+  }
 `;
 
 export const ListCardInform = styled.ul`
