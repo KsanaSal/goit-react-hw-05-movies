@@ -32,7 +32,7 @@ const Movies = () => {
   return (
     <main>
       <SearchBox value={query} onChange={updateQueryString} />
-      {movies && <MovieList movies={movies} />}
+      {movies && <MovieList to="" movies={movies} />}
     </main>
   );
 };
