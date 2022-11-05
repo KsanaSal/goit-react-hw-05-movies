@@ -18,10 +18,10 @@ const Reviews = () => {
     };
     movieReviews();
   }, [id]);
-  
+
   return (
     <ul>
-      {reviews && reviews.length > 0 ? (
+      {reviews && reviews.results.length > 0 ? (
         reviews.results.map(el => (
           <li key={el.id}>
             <TitleReview>Author: {el.author}</TitleReview>
