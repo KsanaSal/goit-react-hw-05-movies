@@ -40,7 +40,7 @@ export const Title = styled.h2`
 export const Link = styled(NavLink)`
   padding: 8px 16px;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
 
   &.active {
     color: #ff4500;
@@ -50,4 +50,8 @@ export const Link = styled(NavLink)`
 export const ListCardInform = styled.ul`
   border-bottom: 2px solid #f1f1f1;
   padding-bottom: 16px;
+
+  & li{
+    padding: 8px 0;
+  }
 `;

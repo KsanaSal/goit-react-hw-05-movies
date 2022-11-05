@@ -19,15 +19,19 @@ const Cast = () => {
     };
     movieCast();
   }, [id]);
+  
   return (
     <div>
       {cast &&
         cast.cast.map(el => (
           <CardCast key={el.id}>
             <ProfilePath
-              src={`https://image.tmdb.org/t/p/w500${el.profile_path}`}
+              src={
+                el.profile_path
+                  ? `https://image.tmdb.org/t/p/w500${el.profile_path}`
+                  : 'https://via.placeholder.com/120x180'
+              }
               alt={el.name}
-              onError="https://via.placeholder.com/120x180"
             />
             <ListName>
               <li>{el.name}</li>
