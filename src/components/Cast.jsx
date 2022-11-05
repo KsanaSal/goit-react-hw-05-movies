@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import getCast from 'data/getCast';
+import { CardCast, ListName, ProfilePath } from './Cast.styled';
 
 const Cast = () => {
   const { id } = useParams();
@@ -18,7 +19,24 @@ const Cast = () => {
     };
     movieCast();
   }, [id]);
-  return <div>text</div>;
+  return (
+    <div>
+      {cast &&
+        cast.cast.map(el => (
+          <CardCast key={el.id}>
+            <ProfilePath
+              src={`https://image.tmdb.org/t/p/w500${el.profile_path}`}
+              alt={el.name}
+              onError="https://via.placeholder.com/120x180"
+            />
+            <ListName>
+              <li>{el.name}</li>
+            </ListName>
+            <span>Character: {el.character}</span>
+          </CardCast>
+        ))}
+    </div>
+  );
 };
 
 export default Cast;

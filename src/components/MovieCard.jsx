@@ -5,6 +5,7 @@ import {
   Container,
   ContentMovie,
   Link,
+  ListCardInform,
   PosterPath,
   Text,
   Title,
@@ -29,7 +30,7 @@ export const MovieCard = ({ movie }) => {
       </Container>
       <div>
         <Text>Additional information</Text>
-        <ul>
+        <ListCardInform>
           <li>
             <Link to="cast" end>
               Cast
@@ -38,7 +39,7 @@ export const MovieCard = ({ movie }) => {
           <li>
             <Link to="reviews">Reviews</Link>
           </li>
-        </ul>
+        </ListCardInform>
         <Suspense fallback={<div>Loading page...</div>}>
           <Outlet />
         </Suspense>

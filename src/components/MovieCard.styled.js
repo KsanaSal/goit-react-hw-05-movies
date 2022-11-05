@@ -9,6 +9,7 @@ export const Main = styled.main`
 export const Container = styled.div`
   display: flex;
   padding: 15px;
+  border-bottom: 2px solid #f1f1f1;
 `;
 
 export const PosterPath = styled.img`
@@ -42,6 +43,11 @@ export const Link = styled(NavLink)`
   font-size: 20px;
 
   &.active {
-    color: #FF4500;
+    color: #ff4500;
   }
+`;
+
+export const ListCardInform = styled.ul`
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 16px;
 `;
