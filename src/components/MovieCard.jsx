@@ -17,7 +17,11 @@ export const MovieCard = ({ movie }) => {
     <>
       <Container>
         <PosterPath
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+              : 'https://via.placeholder.com/300x450'
+          }
           alt={movie.title}
         />
         <ContentMovie>
@@ -51,7 +55,7 @@ export const MovieCard = ({ movie }) => {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    poster_path: PropTypes.string.isRequired,
+    poster_path: PropTypes.string,
     title: PropTypes.string.isRequired,
     vote_average: PropTypes.number.isRequired,
     genres: PropTypes.arrayOf(
