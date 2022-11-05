@@ -6,12 +6,10 @@ import { CardCast, ListName, ProfilePath } from './Cast.styled';
 const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState(null);
-  console.log(cast);
   useEffect(() => {
     const movieCast = async () => {
       try {
         const fetchMovies = await getCast(id);
-        console.log(fetchMovies);
         setCast(fetchMovies);
       } catch {
         console.log('first');
@@ -19,7 +17,7 @@ const Cast = () => {
     };
     movieCast();
   }, [id]);
-  
+
   return (
     <div>
       {cast &&

@@ -1,7 +1,5 @@
 import { HiArrowLeft } from 'react-icons/hi';
-// import { Link } from "react-router-dom";
-// import styled from "styled-components";
-
+import PropTypes from 'prop-types';
 import { StyledLink } from './BackButton.styled';
 
 export const BackButton = ({ to, children }) => {
@@ -11,4 +9,17 @@ export const BackButton = ({ to, children }) => {
       {children}
     </StyledLink>
   );
+};
+
+BackButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.oneOfType([
+    PropTypes.shape({
+      hash: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired,
+      pathname: PropTypes.string.isRequired,
+      search: PropTypes.string.isRequired,
+    }),
+    PropTypes.string,
+  ]),
 };

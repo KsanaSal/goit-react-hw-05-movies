@@ -6,13 +6,11 @@ import { TitleReview } from './Reviews.styled';
 const Reviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState(null);
-  console.log(reviews);
 
   useEffect(() => {
     const movieReviews = async () => {
       try {
         const fetchMovies = await getReviews(id);
-        console.log(fetchMovies);
         setReviews(fetchMovies);
       } catch {
         console.log('first');
@@ -20,16 +18,19 @@ const Reviews = () => {
     };
     movieReviews();
   }, [id]);
-
+  
   return (
     <ul>
-      {reviews &&
+      {reviews && reviews.length > 0 ? (
         reviews.results.map(el => (
-          <li>
+          <li key={el.id}>
             <TitleReview>Author: {el.author}</TitleReview>
             <p>{el.content}</p>
           </li>
-        ))}
+        ))
+      ) : (
+        <p>We don't have any reviews for this movie.</p>
+      )}
     </ul>
   );
 };

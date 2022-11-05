@@ -3,18 +3,18 @@ import { SearchBox } from 'components/SearchBox';
 import getSearchMovies from 'data/getSearchMovies';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Main } from './Movies.styled';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
   const [movies, setMovies] = useState([]);
-  console.log(movies);
+
   useEffect(() => {
     setMovies([]);
     const searchMovies = async () => {
       try {
         const fetchMovies = await getSearchMovies(query);
-        console.log(fetchMovies);
         setMovies(fetchMovies.results);
       } catch {
         console.log('first');
@@ -31,10 +31,10 @@ const Movies = () => {
   };
 
   return (
-    <main>
+    <Main>
       <SearchBox value={query} onChange={updateQueryString} />
       {movies && <MovieList to="" movies={movies} />}
-    </main>
+    </Main>
   );
 };
 

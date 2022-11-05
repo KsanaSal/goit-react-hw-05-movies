@@ -1,10 +1,9 @@
 import { MovieList } from 'components/MovieList';
 import getTrending from 'data/getTrending';
 import { useState, useEffect } from 'react';
+import { Main } from './Home.styled';
 
 const Home = () => {
-  console.log(getTrending());
-  getTrending().then(console.log);
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const trendingMovies = async () => {
@@ -19,10 +18,10 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <Main>
       <h1>Trending today</h1>
       {movies && <MovieList to="movies/" movies={movies} />}
-    </main>
+    </Main>
   );
 };
 

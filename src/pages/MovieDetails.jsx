@@ -11,13 +11,10 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
-  console.log(movie);
-
   useEffect(() => {
     const movieDetail = async () => {
       try {
         const fetchMovies = await getMovieById(id);
-        console.log(fetchMovies);
         setMovie(fetchMovies);
       } catch {
         console.log('first');
