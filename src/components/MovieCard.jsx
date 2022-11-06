@@ -12,7 +12,7 @@ import {
   Title,
 } from './MovieCard.styled';
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ movie, to }) => {
   return (
     <>
       <Container>
@@ -37,12 +37,12 @@ export const MovieCard = ({ movie }) => {
         <Text>Additional information</Text>
         <ListCardInform>
           <li>
-            <Link to="cast" end>
+            <Link to="cast" end state={{from: to}}>
               Cast
             </Link>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews" state={{from: to}}>Reviews</Link>
           </li>
         </ListCardInform>
         <Suspense fallback={<div>Loading page...</div>}>

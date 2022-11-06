@@ -26,7 +26,7 @@ const MovieDetails = () => {
   return (
     <Main>
       <BackButton to={backLinkHref}>Go back</BackButton>
-      {movie && <MovieCard movie={movie} />}
+      {movie && <MovieCard movie={movie} to={backLinkHref}/>}
     </Main>
   );
 };
